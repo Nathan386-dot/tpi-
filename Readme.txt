@@ -1,4 +1,4 @@
-*** INSTALLATION DE PROJET LARAVEL ***
+﻿*** INSTALLATION DE PROJET LARAVEL ***
 1 - Téléchargement et installation de Composer
 URL : https://getcomposer.org/download/
 Etapes pour le téléchargement : Sur le titre Windows installer, cliquer sur Composer-Setup.exe pour télécharger la dernière version de composer
@@ -48,6 +48,7 @@ DB_PORT=3306 (3306 pour MySQL, remplacer par 5432 pour PostgreSQL)
 DB_DATABASE=laravel (nom de la base de données) (exemple : attente)
 DB_USERNAME=root (utilisateur de la base de données) (par défaut : root)
 DB_PASSWORD= (mot de passe de la base de données) (par défaut : (vide))
+ - Modifier le fichier « .env.example » en « .env » si le fichier « .env » n’existe pas encore
  - Enregistrer le fichier et revenir dans le terminal et exécuter la commande :
 php artisan key:generate
 php artisan migrate
