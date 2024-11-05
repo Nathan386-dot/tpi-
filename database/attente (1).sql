@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 05 nov. 2024 à 12:17
+-- Généré le : mar. 05 nov. 2024 à 12:33
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.3.6
 
@@ -305,7 +305,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `usertype`, `door_number`, `remember_token`, `created_at`, `updated_at`) VALUES
-(4, 'admin', 'admin@gmail.com', NULL, '$2y$10$e0NRoZ.qYxyvnnMvV1.UJO9gUywHzrIxvCUYpqFYYdoFniMbvjEGu', 'admin\r\n', 'none', NULL, '2024-10-04 09:06:34', '2024-10-10 14:37:21'),
+(4, 'admin', 'admin@gmail.com', NULL, '$2y$10$wHqKY7PuqhChEDWy7f5LeO4g/dLz5jNHYHpIwZTVHbXztZQ2MWPYa', 'admin\r\n', 'none', NULL, '2024-10-04 09:06:34', '2024-10-10 14:37:21'),
 (15, 'RASOLOARISOA Erno Nathan Fandresena', 'nathan@gmail.com', NULL, '$2y$12$QH2vt9TTx4Gz8EOat/MrAe/tfJkUqbwiD9/LzyA37wX1ANiLANOPO', 'user', '99', NULL, '2024-10-15 02:28:12', '2024-11-03 20:05:07'),
 (16, 'Izidor', 'izidor@gmail.com', NULL, '$2y$12$5XZ88kvNi6eNzQIE4S5aZu1QkSnr0.qBAyCt1JFyWTE33t1FH/yDO', 'user', '8', NULL, '2024-10-15 04:07:51', '2024-10-15 04:07:51');
 COMMIT;
