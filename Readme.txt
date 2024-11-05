@@ -41,6 +41,8 @@ URL du projet :
  - Décompresser le fichier zip
  - Entrer dans le dossier opj-accueil pour l'écran d'accueil des OPJ, dans le dossier substitut_ecran pour les substitus et l'admin des substituts et enfin dans le dossier affichage pour l'écran d'affichage de la file d'attente
  - Ouvir un terminal ensuite exécuter le commande "composer install"
+ - Modifier le fichier « .env.example » en « .env » si le fichier « .env » n’existe pas encore
+
  - Configurer la base de donnée dans le fichier .env de chaque projet par :
 DB_CONNECTION=mysql (mysql pour MySQL, remplacer par pgsql pour PostegreSQL)
 DB_HOST=127.0.0.1
@@ -48,8 +50,7 @@ DB_PORT=3306 (3306 pour MySQL, remplacer par 5432 pour PostgreSQL)
 DB_DATABASE=laravel (nom de la base de données) (exemple : attente)
 DB_USERNAME=root (utilisateur de la base de données) (par défaut : root)
 DB_PASSWORD= (mot de passe de la base de données) (par défaut : (vide))
- - Modifier le fichier « .env.example » en « .env » si le fichier « .env » n’existe pas encore
- - Enregistrer le fichier et revenir dans le terminal et exécuter la commande :
+- Enregistrer le fichier et revenir dans le terminal et exécuter la commande :
 php artisan key:generate
 php artisan migrate
  - Vous pouvez aussi entrer dans phpmyadmin via WampServer et importer la base de donnée qui se trouve dans le fichier database mais si vous faites cela, il n'est plus nécessaire de faire "php artisan migrate" ni de configurer votre base de donnée : 
