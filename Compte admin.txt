@@ -1,0 +1,3 @@
+ADMINISTRATEUR :
+Email : admin@gmail.com
+Mot de passe : admin.pw

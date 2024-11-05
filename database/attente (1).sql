@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 05 nov. 2024 à 09:32
+-- Généré le : mar. 05 nov. 2024 à 12:17
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.3.6
 
@@ -29,8 +29,8 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `cache`;
 CREATE TABLE IF NOT EXISTS `cache` (
-  `key` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `value` mediumtext COLLATE utf8mb3_unicode_ci NOT NULL,
+  `key` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `value` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `expiration` int NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `cache` (
 
 DROP TABLE IF EXISTS `cache_locks`;
 CREATE TABLE IF NOT EXISTS `cache_locks` (
-  `key` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `owner` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `key` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `owner` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `expiration` int NOT NULL,
   PRIMARY KEY (`key`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -58,11 +58,11 @@ CREATE TABLE IF NOT EXISTS `cache_locks` (
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `uuid` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb3_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb3_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
+  `uuid` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
@@ -77,12 +77,12 @@ CREATE TABLE IF NOT EXISTS `failed_jobs` (
 DROP TABLE IF EXISTS `file_d_attente`;
 CREATE TABLE IF NOT EXISTS `file_d_attente` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `provenance` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `numero_appel` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `provenance` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `numero_appel` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `door_number` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `door_number` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -102,8 +102,8 @@ INSERT INTO `file_d_attente` (`id`, `provenance`, `role`, `numero_appel`, `creat
 DROP TABLE IF EXISTS `jobs`;
 CREATE TABLE IF NOT EXISTS `jobs` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `queue` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
+  `queue` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `attempts` tinyint UNSIGNED NOT NULL,
   `reserved_at` int UNSIGNED DEFAULT NULL,
   `available_at` int UNSIGNED NOT NULL,
@@ -120,13 +120,13 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 
 DROP TABLE IF EXISTS `job_batches`;
 CREATE TABLE IF NOT EXISTS `job_batches` (
-  `id` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `total_jobs` int NOT NULL,
   `pending_jobs` int NOT NULL,
   `failed_jobs` int NOT NULL,
-  `failed_job_ids` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
-  `options` mediumtext COLLATE utf8mb3_unicode_ci,
+  `failed_job_ids` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `options` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `cancelled_at` int DEFAULT NULL,
   `created_at` int NOT NULL,
   `finished_at` int DEFAULT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `job_batches` (
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `migration` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -171,8 +171,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 DROP TABLE IF EXISTS `opj`;
 CREATE TABLE IF NOT EXISTS `opj` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `provenance` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `provenance` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `role` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `numero_appel` bigint UNSIGNED NOT NULL,
   `prise_en_charge` tinyint(1) DEFAULT NULL,
   `door_number` bigint UNSIGNED DEFAULT NULL,
@@ -197,8 +197,8 @@ INSERT INTO `opj` (`id`, `provenance`, `role`, `numero_appel`, `prise_en_charge`
 
 DROP TABLE IF EXISTS `password_reset_tokens`;
 CREATE TABLE IF NOT EXISTS `password_reset_tokens` (
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `token` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -221,8 +221,8 @@ CREATE TABLE IF NOT EXISTS `provenances` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `provenance_name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `provenance_details` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `provenance_name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `provenance_details` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -249,11 +249,11 @@ INSERT INTO `provenances` (`id`, `created_at`, `updated_at`, `provenance_name`, 
 
 DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
-  `id` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `user_id` bigint UNSIGNED DEFAULT NULL,
-  `ip_address` varchar(45) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `user_agent` text COLLATE utf8mb3_unicode_ci,
-  `payload` longtext COLLATE utf8mb3_unicode_ci NOT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `user_agent` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `payload` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `last_activity` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `sessions_user_id_index` (`user_id`),
@@ -287,13 +287,13 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `usertype` varchar(255) COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'user',
-  `door_number` varchar(255) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `usertype` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'user',
+  `door_number` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -305,7 +305,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `usertype`, `door_number`, `remember_token`, `created_at`, `updated_at`) VALUES
-(4, 'admin', 'admin@gmail.com', NULL, '$2y$12$MtjAhO4/S8XCK3uxLqdh1Ocpt6Ha8MpAsCvwR0O8kaC0DPd9.uNJi', 'admin\r\n', 'none', NULL, '2024-10-04 09:06:34', '2024-10-10 14:37:21'),
+(4, 'admin', 'admin@gmail.com', NULL, '$2y$10$e0NRoZ.qYxyvnnMvV1.UJO9gUywHzrIxvCUYpqFYYdoFniMbvjEGu', 'admin\r\n', 'none', NULL, '2024-10-04 09:06:34', '2024-10-10 14:37:21'),
 (15, 'RASOLOARISOA Erno Nathan Fandresena', 'nathan@gmail.com', NULL, '$2y$12$QH2vt9TTx4Gz8EOat/MrAe/tfJkUqbwiD9/LzyA37wX1ANiLANOPO', 'user', '99', NULL, '2024-10-15 02:28:12', '2024-11-03 20:05:07'),
 (16, 'Izidor', 'izidor@gmail.com', NULL, '$2y$12$5XZ88kvNi6eNzQIE4S5aZu1QkSnr0.qBAyCt1JFyWTE33t1FH/yDO', 'user', '8', NULL, '2024-10-15 04:07:51', '2024-10-15 04:07:51');
 COMMIT;
