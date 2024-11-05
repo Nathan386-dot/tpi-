@@ -52,6 +52,6 @@ DB_PASSWORD= (mot de passe de la base de données) (par défaut : (vide))
 php artisan key:generate
 php artisan migrate
  - Vous pouvez aussi entrer dans phpmyadmin via WampServer et importer la base de donnée qui se trouve dans le fichier database mais si vous faites cela, il n'est plus nécessaire de faire "php artisan migrate" ni de configurer votre base de donnée : 
- entrer dans phpmyadmin puis connecter vous; ensuite appuyer sur le bouton importer puis appuyer sur choisir un fichier et naviguer vers le dossier database du projet; choisir le fichier "attente" puis appuyer sur importer qui se situe tout en bas
+ entrer dans phpmyadmin puis connecter vous; créer une base de donnée nommée "attente", ensuite appuyer sur le bouton importer puis appuyer sur choisir un fichier et naviguer vers le dossier database du projet; choisir le fichier "attente" puis appuyer sur importer qui se situe tout en bas
  - Lancement du projet : 
 php artisan serve --port=8000 ou --port=8001 ou --port=8002 (les ports doivent être différentes afin d'éviter un confusion dans l'ouverture des pages)
